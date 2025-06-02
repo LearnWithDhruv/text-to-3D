@@ -112,19 +112,6 @@ def display_image(image_path):
 # Function to display 3D model
 def display_model(model_path):
     if model_path and os.path.exists(model_path):
-        # Create an iframe with the 3D viewer (Not working)
-        # link = f"https://modelviewer.dev/share/viewer.html?src=http://localhost:8501/{model_path}"
-        # model_url = f"http://localhost:8501/{model_path.replace(os.sep, '/')}"
-        # model_url2 = model_path.replace(os.sep, '/')
-        # logging.info(f"Model URL: {model_url}, {link}")
-        # html = f"""
-        # <div class="model-viewer">
-        # <model-viewer src="{model_url}" alt="3D model" auto-rotate camera-controls background-color="#ffffff" style="width: 100%; height: 500px;"></model-viewer>
-        # <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-        # </div>
-        # """
-        # st.markdown(html, unsafe_allow_html=True)
-
         # Add download button
         with open(model_path, "rb") as file:
             model_bytes = file.read()
@@ -145,7 +132,7 @@ def load_history(memory_manager, limit=5):
         return []
 
 # Title and description
-st.title("✨ AI-Powered 3D Creation Pipeline")
+st.title(" AI-Powered 3D Creation Pipeline")
 
 st.markdown("""
 Bring your imagination to life — effortlessly convert text prompts into stunning 3D models using cutting-edge AI.  
