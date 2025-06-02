@@ -2,7 +2,7 @@
 
 This application transforms text descriptions into beautiful 3D models using AI. The pipeline enhances prompts with a local LLM, generates images, and converts them to 3D models while maintaining memory of all creations.
 
-## 🚀 Features
+## Features
 
 - **Text-to-3D Generation**: Turn your creative text prompts into 3D models
 - **LLM Prompt Enhancement**: Local LLM improves your descriptions for better visual results
@@ -10,7 +10,7 @@ This application transforms text descriptions into beautiful 3D models using AI.
 - **Interactive UI**: User-friendly Streamlit interface for easy interaction
 - **Memory System**: Both short-term (session) and long-term (database) memory
 
-## 🛠️ System Architecture
+## System Architecture
 
 ```
 User Prompt → Local LLM Enhancement → Text-to-Image Generation → Image-to-3D Conversion → Memory Storage
@@ -22,14 +22,14 @@ The system uses:
 - **SQLite Database** for long-term memory storage
 - **Streamlit UI** for user interaction
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.8+
 - poetry
 - Openfabric SDK
 - Streamlit
 
-## 🏃‍♂️ Installation & Setup
+##  Installation & Setup
 
 ### Setup with Poetry
 ```bash
@@ -43,7 +43,7 @@ pip install python-magic-bin
 # source venv/bin/activate  # On Unix/MacOS
 ```
 
-## 🚀 Running the Application
+## Running the Application
 
 ```bash
 python launch_app.py
@@ -51,7 +51,7 @@ python launch_app.py
 
 Open your browser and navigate to: http://localhost:8501
 
-## 💾 Memory System
+## Memory System
 
 The application uses a two-tier memory system:
 
@@ -69,24 +69,24 @@ The application uses a two-tier memory system:
 
 This allows the application to reference past creations and maintain context across sessions.
 
-## 🖼️ Example Usage
+## Example Usage
 
-1. Enter a creative prompt like "A glowing dragon standing on a cliff at sunset"
-2. Click "Generate 3D Creation"
+1. Enter a creative prompt like "A futuristic knight standing atop a neon-lit skyscraper."
+2. Hit “Create 3D Model” to begin the magic.
 3. Wait while the system:
    - Enhances your prompt with the LLM
    - Generates an image
    - Converts the image to a 3D model
-4. View and download your 3D model
-5. Browse previous creations in the sidebar
+4. Explore and download your custom 3D model.
+5. Revisit your past creations anytime using the sidebar.
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 - **3D Model Viewer Issues**: If the 3D model doesn't display correctly, use the download button to view the model in a dedicated 3D viewer application.
 - **Image Generation Fails**: Ensure your prompt is descriptive but not excessively long.
 - **App Initialization Errors**: Check that the Openfabric services are properly configured and accessible.
 
-## 📦 Project Structure
+##  Project Structure
 
 ```
 app/
@@ -107,7 +107,7 @@ app/
 └── memory.db                  # SQLite database for long-term memory
 ```
 
-## ✨ Future Enhancements
+## Future Enhancements
 
 - Voice-to-text interaction
 - FAISS/ChromaDB for semantic similarity search
