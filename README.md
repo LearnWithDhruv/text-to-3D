@@ -1,37 +1,54 @@
+
 # 3D Creation Pipeline - AI-Powered Text to 3D Model Generator
 
-This application transforms text descriptions into beautiful 3D models using AI. The pipeline enhances prompts with a local LLM, generates images, and converts them to 3D models while maintaining memory of all creations.
+Transform your imagination into interactive 3D models using AI. This powerful pipeline takes your text prompt, enhances it using a local language model, generates a stunning image, and converts it into a 3D model—all while storing your creative journey.
+
+---
 
 ## Features
 
-- **Text-to-3D Generation**: Turn your creative text prompts into 3D models
-- **LLM Prompt Enhancement**: Local LLM improves your descriptions for better visual results
-- **History Management**: Browse and revisit your previous creations
-- **Interactive UI**: User-friendly Streamlit interface for easy interaction
-- **Memory System**: Both short-term (session) and long-term (database) memory
+- **Text-to-3D Generation**: Convert your creative ideas into 3D assets
+- **Prompt Refinement with Local LLM**: Enhances input using OllamaLlama for optimized visual output
+- **Session & Persistent Memory**: Track and revisit all your creations
+- **Interactive Streamlit UI**: Clean, intuitive interface for seamless interaction
+- **Smart Memory System**: Stores prompts, images, and 3D models for future reference
+
+---
 
 ## System Architecture
 
 ```
-User Prompt → Local LLM Enhancement → Text-to-Image Generation → Image-to-3D Conversion → Memory Storage
+User Prompt → Local LLM → Text-to-Image → Image-to-3D → Memory Database
 ```
 
-The system uses:
-- **Local LLM** (OllamaLlama) for prompt enhancement
-- **Openfabric Apps** for Text-to-Image and Image-to-3D conversion
-- **SQLite Database** for long-term memory storage
-- **Streamlit UI** for user interaction
+**Components**:
+- 🧠 Local LLM: `OllamaLlama` for enhanced prompt engineering  
+- 🎨 Openfabric Apps: Text-to-Image and Image-to-3D conversion  
+- 🗃️ SQLite: Persistent long-term memory  
+- 📺 Streamlit: User interface
 
-## Requirements
+---
 
-- Python 3.8+
-- poetry
-- Openfabric SDK
-- Streamlit
+## Sample Output
+
+Below are example screenshots from the application:
+
+![Sample Image 1](outputs/images/image1.png)
+![Sample Image 2](outputs/images/image2.png)
+![Sample Image 3](outputs/images/image3.png)
+
+---
 
 ##  Installation & Setup
 
-### Setup with Poetry
+### Prerequisites
+- Python 3.8+
+- [Poetry](https://python-poetry.org/)
+- Openfabric SDK
+- Streamlit
+
+### Installation Steps
+
 ```bash
 cd app
 python3 -m venv venv
@@ -39,78 +56,88 @@ poetry install
 pip install openfabric_pysdk-0.3.0-py3-none-any.whl
 pip uninstall python-magic
 pip install python-magic-bin
-.\venv\Scripts\activate  # On Windows
-# source venv/bin/activate  # On Unix/MacOS
+# Activate environment
+.env\Scriptsctivate        # On Windows
 ```
 
-## Running the Application
+---
+
+## Running the App
 
 ```bash
 python launch_app.py
 ```
 
-Open your browser and navigate to: http://localhost:8501
+Then navigate to: [http://localhost:8501](http://localhost:8501)
+
+---
 
 ## Memory System
 
-The application uses a two-tier memory system:
+### 1. Short-Term (Session-Based)
+- Recent prompt
+- Last generated image
+- Last created 3D model
 
-1. **Short-Term Memory**: Maintains context during a session
-   - Last prompt used
-   - Last image generated
-   - Last 3D model created
+### 2. Long-Term (Persistent)
+- Raw and enhanced prompts
+- Image and model file paths
+- Tag metadata
 
-2. **Long-Term Memory**: SQLite database that stores:
-   - Original prompts
-   - Enhanced prompts
-   - Image paths
-   - 3D model paths
-   - Generated tags
+All stored in `memory.db` (SQLite).
 
-This allows the application to reference past creations and maintain context across sessions.
+---
 
-## Example Usage
+## Example Workflow
 
-1. Enter a creative prompt like "A futuristic knight standing atop a neon-lit skyscraper."
-2. Hit “Create 3D Model” to begin the magic.
-3. Wait while the system:
-   - Enhances your prompt with the LLM
+1. Input prompt: `"A futuristic knight standing atop a neon-lit skyscraper."`
+2. Click **Create 3D Model**
+3. System automatically:
+   - Enhances the prompt
    - Generates an image
-   - Converts the image to a 3D model
-4. Explore and download your custom 3D model.
-5. Revisit your past creations anytime using the sidebar.
+   - Converts the image into a 3D model
+4. Preview/download the output or revisit later via the sidebar.
 
-##  Troubleshooting
+---
 
-- **3D Model Viewer Issues**: If the 3D model doesn't display correctly, use the download button to view the model in a dedicated 3D viewer application.
-- **Image Generation Fails**: Ensure your prompt is descriptive but not excessively long.
-- **App Initialization Errors**: Check that the Openfabric services are properly configured and accessible.
-
-##  Project Structure
+## Project Structure
 
 ```
 app/
-├── app.py                     # Streamlit UI application
-├── launch_app.py              # Application launcher
-├── main.py                    # Main backend logic
+├── app.py                     # UI with Streamlit
+├── launch_app.py              # Entry point
+├── main.py                    # Backend logic
 ├── core/
-│   ├── llm/                   # LLM integration
-│   │   └── ollama_llama.py    # Local LLM client
-│   ├── memory/                # Memory system
-│   │   └── memory_manager.py  # Memory management
-│   ├── pipeline/              # Creative pipeline
-│   │   └── generator.py       # Main generation pipeline
+│   ├── llm/ollama_llama.py    # Local LLM integration
+│   ├── memory/memory_manager.py  # Memory logic
+│   ├── pipeline/generator.py  # Core creative pipeline
 │   └── stub.py                # Openfabric API stub
-├── outputs/                   # Generated outputs
+├── outputs/
 │   ├── images/                # Generated images
 │   └── models/                # Generated 3D models
-└── memory.db                  # SQLite database for long-term memory
+└── memory.db                  # SQLite DB
 ```
+
+---
 
 ## Future Enhancements
 
-- Voice-to-text interaction
-- FAISS/ChromaDB for semantic similarity search
-- Advanced 3D model viewer with interactive controls
-- Batch processing of multiple prompts
-- Style transfer and customization options
+- 🎙️ Voice-controlled prompts
+- 🔍 FAISS/ChromaDB: Semantic prompt matching
+- 🎛️ Interactive 3D viewer controls
+- 📦 Batch processing mode
+- 🎨 AI style transfer for 3D assets
+
+---
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| 3D Model not visible | Download and open in a dedicated 3D viewer |
+| Image generation failed | Use concise and meaningful prompts |
+| Launch issues | Verify Openfabric services and network configs |
+
+---
+
+>  Bring your ideas to life with just a few words.
