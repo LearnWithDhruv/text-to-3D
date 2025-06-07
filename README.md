@@ -1,11 +1,21 @@
 
-# 🛠️ 3D Creation Pipeline - AI-Powered Text to 3D Model Generator
+# Working Demonstration
+
+Watch the full working demo of the 3D Creation Pipeline in action:  
+[![Watch Demo on Loom](https://cdn.loom.com/sessions/thumbnails/6826d074cd8b4374905107abc970b9ec-with-play.gif)](https://www.loom.com/share/6826d074cd8b4374905107abc970b9ec?sid=99ed7ab5-9b62-488f-99f7-eafd4a6e6121)
+
+Or click here to view directly: [Demo Video on Loom](https://www.loom.com/share/6826d074cd8b4374905107abc970b9ec?sid=99ed7ab5-9b62-488f-99f7-eafd4a6e6121)
+
+---
+
+
+#  3D Creation Pipeline - AI-Powered Text to 3D Model Generator
 
 Transform your imagination into interactive 3D models using AI. This powerful pipeline takes your text prompt, enhances it using a local language model, generates a stunning image, and converts it into a 3D model—all while storing your creative journey.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Text-to-3D Generation**: Convert your creative ideas into 3D assets
 - **Prompt Refinement with Local LLM**: Enhances input using OllamaLlama for optimized visual output
@@ -15,7 +25,7 @@ Transform your imagination into interactive 3D models using AI. This powerful pi
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 User Prompt → Local LLM → Text-to-Image → Image-to-3D → Memory Database
@@ -29,7 +39,7 @@ User Prompt → Local LLM → Text-to-Image → Image-to-3D → Memory Database
 
 ---
 
-## 📸 Sample Output
+## Sample Output
 
 Below are example screenshots from the application:
 
@@ -39,7 +49,7 @@ Below are example screenshots from the application:
 
 ---
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - Python 3.8+
@@ -63,7 +73,7 @@ pip install python-magic-bin
 
 ---
 
-## 🚀 Running the App
+## Running the App
 
 ```bash
 python launch_app.py
@@ -73,7 +83,7 @@ Then navigate to: [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## 🧠 Memory System
+## Memory System
 
 ### 1. Short-Term (Session-Based)
 - Recent prompt
@@ -89,7 +99,7 @@ All stored in `memory.db` (SQLite).
 
 ---
 
-## 🧪 Example Workflow
+## Example Workflow
 
 1. Input prompt: `"A futuristic knight standing atop a neon-lit skyscraper."`
 2. Click **Create 3D Model**
@@ -101,7 +111,7 @@ All stored in `memory.db` (SQLite).
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ```
 app/
@@ -121,7 +131,7 @@ app/
 
 ---
 
-## 🧠 Future Enhancements
+## Future Enhancements
 
 - 🎙️ Voice-controlled prompts
 - 🔍 FAISS/ChromaDB: Semantic prompt matching
@@ -131,7 +141,7 @@ app/
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -141,4 +151,4 @@ app/
 
 ---
 
-> 🚀 Bring your ideas to life with just a few words.
+ Bring your ideas to life with just a few words.
