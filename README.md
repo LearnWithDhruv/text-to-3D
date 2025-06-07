@@ -44,7 +44,7 @@ User Prompt → Local LLM → Text-to-Image → Image-to-3D → Memory Database
 Below are example screenshots from the application:
 
 ![Sample Screenshot](outputs/images/Screenshot 2025-06-07 225112.png)
-![Sample Screenshot](outputs/images/Screenshot 2025-06-07 225112.png)
+![Sample Screenshot](outputs/images/Screenshot 2025-06-07 225129.png)
 ![Sample Screenshot](outputs/images/Screenshot 2025-06-07 225112.png)
 
 ---
