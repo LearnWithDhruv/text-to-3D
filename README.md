@@ -33,7 +33,7 @@ User Prompt → Local LLM → Text-to-Image → Image-to-3D → Memory Database
 
 Below are example screenshots from the application:
 
-![Sample Image 1](outputs/images/image1.png)
+![Sample Image 1](outputs/images/Screenshot 2025-06-07 225112.png)
 ![Sample Image 2](outputs/images/image2.png)
 ![Sample Image 3](outputs/images/image3.png)
 
